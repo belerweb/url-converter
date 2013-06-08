@@ -3,10 +3,46 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
 	<groupId>com.belerweb</groupId>
 	<artifactId>url-converter</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
+
+	<name>URL Converter</name>
+	<description>Convert URL in Thunder, QQ XuanFeng and Flashget</description>
+	<url>https://github.com/belerweb/url-convert</url>
+
+	<licenses>
+		<license>
+			<name>BSD</name>
+			<url>http://opensource.org/licenses/bsd-license.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:https://github.com/belerweb/url-convert.git</connection>
+		<developerConnection>scm:git:https://github.com/belerweb/url-convert.git</developerConnection>
+		<url>https://github.com/belerweb/url-convert.git</url>
+	</scm>
+	<issueManagement>
+		<system>Github Issue</system>
+		<url>https://github.com/belerweb/url-convert/issues</url>
+	</issueManagement>
+	<developers>
+		<developer>
+			<id>belerweb</id>
+			<name>Tangjun He</name>
+			<email>belerweb@gmail.com</email>
+			<url>https://github.com/belerweb</url>
+		</developer>
+	</developers>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,5 +63,36 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-enforcer-plugin</artifactId>
+										<versionRange>[1.0,)</versionRange>
+										<goals>
+											<goal>enforce</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
 </project>
